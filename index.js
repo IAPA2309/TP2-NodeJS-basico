@@ -1,7 +1,7 @@
-import { concatInvert } from "./EJ01.js";
+import { concatInvert } from "./src/modules/convertirString.js";
 import { PI, sumar, restar, multiplicar, dividir } from "./src/modules/matematica.js";
 import { Alumno } from "./src/modules/alumno.js";
-// import { copiar } from "./src/modules/EJ04.js";
+import { copiar } from "./src/modules/filerw.js";
 
 let textoEntrada01 = "Escuela";
 let textoEntrada02 = "ORT";
@@ -32,4 +32,6 @@ console.log(`El alumno 2 es : ${alumno2.mostrar()}`);
 
 console.log("----------------------------");
 
-// copiar('./entrada.txt', './salida.txt');
+copiar('./entrada.txt', './salida.txt');
+
+console.log("----------------------------");

@@ -1,6 +1,6 @@
-const fs = require('fs');
+import * as fs from 'fs';
 
-function copiar(entrada, salida) {
+export function copiar(entrada, salida) {
     fs.readFile(entrada, 'utf8', (error, data) => {
         if (error) throw error;
         
@@ -11,5 +11,3 @@ function copiar(entrada, salida) {
         });
     });
 }
-
-module.exports = Copiar;
