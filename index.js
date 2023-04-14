@@ -2,6 +2,7 @@ import { concatInvert } from "./src/modules/convertirString.js";
 import { PI, sumar, restar, multiplicar, dividir } from "./src/modules/matematica.js";
 import { Alumno } from "./src/modules/alumno.js";
 import { copiar } from "./src/modules/filerw.js";
+import { parsearUrl } from "./src/modules/urlParse.js"
 
 let textoEntrada01 = "Escuela";
 let textoEntrada02 = "ORT";
@@ -33,5 +34,10 @@ console.log(`El alumno 2 es : ${alumno2.mostrar()}`);
 console.log("----------------------------");
 
 copiar('./entrada.txt', './salida.txt');
+
+console.log("----------------------------");
+
+const objeto = parsearUrl("http://www.ort.edu.ar:8080/alumnos/index.htm?curso=2022&mes=mayo");
+console.log(objeto);
 
 console.log("----------------------------");
