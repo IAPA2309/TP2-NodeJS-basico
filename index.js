@@ -2,7 +2,8 @@ import { concatInvert } from "./src/modules/convertirString.js";
 import { PI, sumar, restar, multiplicar, dividir } from "./src/modules/matematica.js";
 import { Alumno } from "./src/modules/alumno.js";
 import { copiar } from "./src/modules/filerw.js";
-import { parsearUrl } from "./src/modules/urlParse.js"
+import { parsearUrl } from "./src/modules/urlParse.js";
+import { obtenerMoneda } from "./src/modules/currency.js";
 
 let textoEntrada01 = "Escuela";
 let textoEntrada02 = "ORT";
@@ -44,3 +45,12 @@ const objeto2 = parsearUrl("ht@tp://www.ort.edu.ar:8080/alumnos/index.htm?curso=
 console.log(objeto2);
 
 console.log("----------------------------");
+
+let monedaDelPais, codigoPais;
+codigoPais = 'Argentina';
+monedaDelPais = obtenerMoneda(codigoPais);
+console.log(`La moneda del país ${codigoPais} es: ${monedaDelPais}`);
+
+codigoPais = 'UZA';
+monedaDelPais = obtenerMoneda(codigoPais);
+console.log(`La moneda del país ${codigoPais} es: ${monedaDelPais}`);
