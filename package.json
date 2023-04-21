@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "currency-map-country": "^1.0.12"
+    "currency-map-country": "^1.0.12",
+    "dotenv": "^16.0.3",
+    "mssql": "^9.1.1"
   }
 }
