@@ -36,7 +36,6 @@ export default class PizzaService {
   insert = async (pizza) => {
     const insertQuery =
       "INSERT INTO Pizzas (Nombre, LibreGluten, Importe, Descripcion) VALUES (@pNombre, @pLibreGluten, @pImporte, @pDescripcion)";
-    console.log(pizza.nombre);
     try {
       let pool = await sql.connect(config);
       let result = await pool
@@ -50,6 +49,23 @@ export default class PizzaService {
       console.log(error);
     }
   };
+
+  update = async (pizza) => {
+    const insertQuery = `UPDATE Pizzas SET nombre = @pNombre, libreGluten = @pLibreGluten, importe = @pImporte, descripcion = @pDescripcion WHERE id = @pId`;
+    try{
+        let pool = await sql.connect(config);
+        let result = await pool
+          .request()
+          .input('pId', sql.Int, pizza.id)
+          .input("pNombre", sql.NVarChar(150), pizza.nombre)
+          .input("pLibreGluten", sql.Bit, pizza.libreGluten)
+          .input("pImporte", sql.Float, pizza.importe)
+          .input("pDescripcion", sql.NVarChar(MAX), pizza.descripcion)
+          .query(insertQuery);
+    }catch(error){
+        console.log(error);
+    }
+  }
 
   deleteById = async (id) => {
     let rowsAffected = 0;

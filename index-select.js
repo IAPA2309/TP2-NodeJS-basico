@@ -24,6 +24,25 @@ let result = await pool.request().query("SELECT top 2 * FROM Pizzas");
 // result = await pizzaService.insert(pizza);
 // console.log(result);
 
+// const pizza = new Pizza(
+//   1,
+//   "Pizza de jamón y queso",
+//   false,
+//   10.5,
+//   "Deliciosa pizza con jamón, queso, y salsa de tomate"
+// );
+
+const pizza = new Pizza(
+  3,
+  "Pizza update",
+  true,
+  123,
+  "Esta pizza fue actualizada"
+);
+
+result = await pizzaService.update(pizza);
+console.log(result);
+
 // result = await pizzaService.deleteById(8);
 // console.log(result);
 
